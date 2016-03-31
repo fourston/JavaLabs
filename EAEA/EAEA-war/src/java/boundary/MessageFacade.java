@@ -6,6 +6,7 @@
 package boundary;
 
 import entities.Message;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +29,6 @@ public class MessageFacade extends AbstractFacade<Message> {
     public MessageFacade() {
         super(Message.class);
     }
+    
     
 }

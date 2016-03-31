@@ -7,6 +7,7 @@ package boundary;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.PostPersist;
 
 /**
  *
@@ -22,6 +23,7 @@ public abstract class AbstractFacade<T> {
 
     protected abstract EntityManager getEntityManager();
 
+   
     public void create(T entity) {
         getEntityManager().persist(entity);
     }
@@ -43,6 +45,7 @@ public abstract class AbstractFacade<T> {
         cq.select(cq.from(entityClass));
         return getEntityManager().createQuery(cq).getResultList();
     }
+    
 
     public List<T> findRange(int[] range) {
         javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();

@@ -7,23 +7,28 @@
     <h:head>
         <title>Facelet Title</title>
     </h:head>
-    
-        <h:body>
-    <f:view>
-        <h:form>
-            <h:outputLabel value="Message:"/><h:inputText value="#{messageView.message.message}"/>
-            <h:commandButton action="#{messageView.postMessage}" value="Post Message"/>
-            
-            <h:dataTable value="#{messageView.allMessages}" var="msg" >
-                  <h:column>
-                    <f:facet name="header">Сообщение</f:facet>
-                        #{msg.message}
-                </h:column>
-            </h:dataTable>
-        </h:form>
-        
-        
-    </f:view>
-</h:body>
+
+    <h:body>
+        <f:view>
+            <h:form>
+                <h:outputLabel value="Message:"/><h:inputText value="#{messageView.message.message}"/>
+                
+                <h:commandButton action="#{messageView.postMessage}" value="Post Message"/>
+
+                <h:dataTable value="#{messageView.allMessages}" var="msg" >
+                    <h:column>
+                        <f:facet name="header">Сообщение</f:facet>
+                            #{msg.message}
+                    </h:column>
+                </h:dataTable>
+
+                <h:outputLink value="authors.xhtml">Авторы</h:outputLink>
+            </h:form>
+
+
+
+
+        </f:view>
+    </h:body>
 
 </html>

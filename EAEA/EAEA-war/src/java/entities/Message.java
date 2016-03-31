@@ -27,6 +27,14 @@ public class Message implements Serializable {
     private String message;
     @ManyToOne(fetch=LAZY)
     private Author author;
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
     
     public String getMessage() {
         return message;
